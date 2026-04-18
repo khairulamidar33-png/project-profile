@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informasi & Pengumuman — Bluek Lamkabu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">B</div>
+      <div class="nav-title">
+        <span>Desa Resmi</span>
+        <span>Bluek Lamkabu</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <aside class="side-menu" id="sideMenu">
+    <div class="side-menu-header">
+      <p>Navigasi Utama</p>
+      <h3>Desa Bluek<br>Lamkabu</h3>
+    </div>
+    <nav>
+      <a href="index.html"><span class="menu-icon">🏠</span> Beranda</a>
+      <a href="profil.html"><span class="menu-icon">📜</span> Profil Desa</a>
+      <a href="kegiatan.html"><span class="menu-icon">🎉</span> Kegiatan</a>
+      <a href="informasi.html"><span class="menu-icon">📰</span> Informasi</a>
+    </nav>
+    <div class="side-menu-footer">
+      <p>© 2025 Pemerintah Desa Bluek Lamkabu<br>Kabupaten Pidie, Aceh</p>
+    </div>
+  </aside>
+
+  <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span>›</span>
+        <span>Informasi</span>
+      </div>
+      <h1>Informasi &<br>Pengumuman</h1>
+      <p>Informasi resmi, pengumuman penting, dan berita terbaru dari Pemerintah Desa Bluek Lamkabu untuk seluruh warga.</p>
+    </div>
+  </section>
+
+  <!-- ═══ BREAKING NEWS BANNER ══════════════════════════════════════ -->
+  <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 14px 2rem; overflow: hidden;">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 16px;">
+      <span style="background: rgba(255,255,255,0.2); padding: 3px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0;">🔴 Terkini</span>
+      <div style="overflow: hidden; flex: 1;">
+        <div id="ticker" style="white-space: nowrap; font-size: 0.88rem; font-weight: 500; animation: ticker 18s linear infinite;">
+          📢 Pendaftaran BLT Dana Desa Tahap IV dibuka mulai 20 November 2025 &nbsp;&nbsp;|&nbsp;&nbsp; 🔔 Rapat koordinasi RT/RW dijadwalkan 25 November 2025 &nbsp;&nbsp;|&nbsp;&nbsp; ⚠️ Waspada cuaca ekstrem, hindari aktivitas di luar rumah saat hujan deras
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes ticker {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .info-tab-btn {
+      background: transparent;
+      border: none;
+      padding: 10px 20px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      cursor: pointer;
+      border-bottom: 2.5px solid transparent;
+      transition: all 0.25s ease;
+    }
+    .info-tab-btn.active {
+      color: var(--green-700);
+      border-bottom-color: var(--green-600);
+    }
+    .info-tab-btn:hover { color: var(--green-700); }
+    .info-panel { display: none; }
+    .info-panel.active { display: block; }
+    
+    /* Highlighted important card */
+    .info-card.penting-card {
+      border-left: 5px solid #dc2626;
+      background: linear-gradient(135deg, #fff, #fff8f8);
+    }
+  </style>
+
+  <!-- ═══ CONTENT ══════════════════════════════════════════════════ -->
+  <div class="content-section">
+
+    <!-- Tabs -->
+    <div style="display: flex; gap: 4px; border-bottom: 2px solid var(--green-50); margin-bottom: 40px; overflow-x: auto; scrollbar-width: none;" class="reveal">
+      <button class="info-tab-btn active" onclick="showTab('semua', this)">📋 Semua</button>
+      <button class="info-tab-btn" onclick="showTab('penting', this)">🔴 Penting</button>
+      <button class="info-tab-btn" onclick="showTab('pengumuman', this)">📢 Pengumuman</button>
+      <button class="info-tab-btn" onclick="showTab('umum', this)">ℹ️ Umum</button>
+    </div>
+
+    <div id="tab-semua" class="info-panel active">
+      <!-- Pinned Important Notice -->
+      <div style="background: linear-gradient(135deg, var(--green-800), var(--green-950)); border-radius: var(--radius-md); padding: 28px 32px; margin-bottom: 32px; color: white; display: flex; align-items: center; gap: 24px;" class="reveal">
+        <div style="font-size: 2.5rem; flex-shrink:0">📌</div>
+        <div>
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green-300); font-weight: 700; margin-bottom: 8px">PENGUMUMAN TERPASANG</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 8px">Jadwal Pelayanan Administrasi Desa Semester II 2025</h3>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6">Kantor Desa Bluek Lamkabu melayani administrasi kependudukan setiap Senin–Jumat pukul 08.00–16.00 WIB. Bawa KTP dan dokumen pendukung yang diperlukan.</p>
+        </div>
+        <a href="#" style="flex-shrink:0; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap;">Baca Selengkapnya →</a>
+      </div>
+
+      <div class="info-list">
+
+        <div class="info-card penting-card reveal" data-tipe="penting">
+          <div class="info-card-date">
+            <span class="day">20</span>
+            <span class="month">Nov</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge penting">🔴 Penting</span>
+            <h3>Pembukaan Pendaftaran BLT Dana Desa Tahap IV</h3>
+            <p>Pendaftaran Bantuan Langsung Tunai (BLT) Dana Desa tahap IV resmi dibuka. Warga yang memenuhi syarat harap segera mendaftar ke kantor desa dengan membawa KTP, KK, dan surat keterangan tidak mampu.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="pengumuman">
+          <div class="info-card-date">
+            <span class="day">18</span>
+            <span class="month">Nov</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge pengumuman">📢 Pengumuman</span>
+            <h3>Jadwal Vaksinasi Booster COVID-19 Warga Desa</h3>
+            <p>Puskesmas Mutiara Timur mengumumkan jadwal vaksinasi booster COVID-19 untuk warga Desa Bluek Lamkabu. Kegiatan akan dilaksanakan di Balai Desa tanggal 22 November 2025 pukul 08.00–14.00 WIB.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="penting">
+          <div class="info-card-date">
+            <span class="day">15</span>
+            <span class="month">Nov</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge penting">🔴 Penting</span>
+            <h3>Peringatan Cuaca Ekstrem: Waspadai Banjir</h3>
+            <p>BMKG mengeluarkan peringatan cuaca ekstrem untuk wilayah Kabupaten Pidie. Warga Desa Bluek Lamkabu yang tinggal di sekitar area rawa diminta untuk waspada dan memantau ketinggian air secara berkala.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="pengumuman">
+          <div class="info-card-date">
+            <span class="day">12</span>
+            <span class="month">Nov</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge pengumuman">📢 Pengumuman</span>
+            <h3>Musyawarah Rencana Pembangunan Desa (Musrenbang)</h3>
+            <p>Pemerintah Desa mengundang seluruh warga, tokoh masyarakat, dan perwakilan kelompok untuk hadir dalam Musrenbang Desa Tahun 2026 pada 18 November 2025 pukul 09.00 WIB di Balai Desa.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="umum">
+          <div class="info-card-date">
+            <span class="day">08</span>
+            <span class="month">Nov</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge umum">ℹ️ Umum</span>
+            <h3>Penggantian Lampu Jalan Desa dengan LED</h3>
+            <p>Program penggantian lampu jalan konvensional dengan lampu LED hemat energi telah selesai dilaksanakan di 3 titik utama desa. Program ini merupakan bagian dari upaya efisiensi energi dan penerangan yang lebih baik.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="umum">
+          <div class="info-card-date">
+            <span class="day">03</span>
+            <span class="month">Nov</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge umum">ℹ️ Umum</span>
+            <h3>Pembagian Bibit Tanaman Produktif Gratis</h3>
+            <p>Dinas Pertanian Kabupaten Pidie bekerja sama dengan Pemerintah Desa akan membagikan bibit tanaman produktif secara gratis kepada warga. Pendaftaran dibuka di kantor desa mulai 10 November 2025.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="pengumuman">
+          <div class="info-card-date">
+            <span class="day">28</span>
+            <span class="month">Okt</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge pengumuman">📢 Pengumuman</span>
+            <h3>Laporan Realisasi APBDes 2025 Triwulan III</h3>
+            <p>Pemerintah Desa Bluek Lamkabu mempublikasikan laporan realisasi Anggaran Pendapatan dan Belanja Desa (APBDes) triwulan III tahun 2025. Laporan dapat dilihat di papan informasi kantor desa.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+        <div class="info-card reveal" data-tipe="penting">
+          <div class="info-card-date">
+            <span class="day">20</span>
+            <span class="month">Okt</span>
+          </div>
+          <div class="info-card-body">
+            <span class="info-badge penting">🔴 Penting</span>
+            <h3>Himbauan Pencegahan Penyakit Demam Berdarah</h3>
+            <p>Dinas Kesehatan mengeluarkan himbauan kepada warga untuk aktif melaksanakan 3M Plus (Menguras, Menutup, Mendaur Ulang) guna mencegah penyebaran penyakit demam berdarah di lingkungan desa.</p>
+          </div>
+          <span class="info-card-arrow">›</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Other panels filtered by JS -->
+    <div id="tab-penting"     class="info-panel"></div>
+    <div id="tab-pengumuman"  class="info-panel"></div>
+    <div id="tab-umum"        class="info-panel"></div>
+
+    <!-- Load More -->
+    <div style="text-align:center; margin-top: 48px" class="reveal">
+      <button onclick="this.textContent='Memuat...'" style="background: var(--white); border: 2px solid var(--green-200); color: var(--green-700); padding: 14px 40px; border-radius: 50px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s ease;" onmouseover="this.style.background='var(--green-50)'" onmouseout="this.style.background='var(--white)'">
+        Muat Lebih Banyak →
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand" style="margin-bottom:14px; display:flex">
+            <div class="nav-logo">B</div>
+            <div class="nav-title">
+              <span>Desa Resmi</span>
+              <span>Bluek Lamkabu</span>
+            </div>
+          </a>
+          <p>Website resmi Pemerintah Desa Bluek Lamkabu, Kabupaten Pidie, Provinsi Aceh.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="profil.html">📜 Profil Desa</a></li>
+            <li><a href="kegiatan.html">🎉 Kegiatan</a></li>
+            <li><a href="informasi.html">📰 Informasi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Informasi</h4>
+          <ul>
+            <li><a href="#">🌾 Potensi Desa</a></li>
+            <li><a href="#">📋 Layanan Administrasi</a></li>
+            <li><a href="#">🗺️ Peta Wilayah</a></li>
+            <li><a href="#">📞 Kontak Kami</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Desa Bluek Lamkabu — Semua hak dilindungi</span>
+        <span>🌿 Kabupaten Pidie, Aceh</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function showTab(tipe, btn) {
+      // Update button states
+      document.querySelectorAll('.info-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Hide all panels
+      document.querySelectorAll('.info-panel').forEach(p => p.classList.remove('active'));
+
+      if (tipe === 'semua') {
+        document.getElementById('tab-semua').classList.add('active');
+      } else {
+        const panel = document.getElementById('tab-' + tipe);
+        panel.classList.add('active');
+
+        // Populate filtered panel from "semua" cards
+        const sourceCards = document.querySelectorAll('#tab-semua .info-card[data-tipe="' + tipe + '"]');
+        panel.innerHTML = '<div class="info-list"></div>';
+        const list = panel.querySelector('.info-list');
+
+        if (sourceCards.length === 0) {
+          panel.innerHTML = '<div style="text-align:center; padding:80px 20px; color:var(--text-light)"><div style="font-size:3rem; margin-bottom:16px">📭</div><h3 style="color:var(--text-dark)">Tidak ada informasi</h3><p>Belum ada informasi dalam kategori ini.</p></div>';
+        } else {
+          sourceCards.forEach(card => {
+            list.appendChild(card.cloneNode(true));
+          });
+        }
+      }
+    }
+  </script>
+</body>
+</html>
